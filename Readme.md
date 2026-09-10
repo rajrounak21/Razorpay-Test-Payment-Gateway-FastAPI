@@ -275,7 +275,7 @@ RAZORPAY_KEY_SECRET=your_test_secret
 
 Use your **Razorpay Test Mode** credentials.
 
-> Never commit `.env` or your Razorpay Secret Key to GitHub.
+How to Get Credentials Must read **RAZORPAY_TEST_KEYS.md** file
 
 ### 5. Start the Application
 
