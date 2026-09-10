@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python-dotenv
+razorpay
+jinja2
+requests
+python-multipart

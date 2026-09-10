@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Premium Developer Kit — RazorPay Demo</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <nav class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">R</div>
+            <span>PayFlow</span>
+        </div>
+
+        <div class="nav-badge">
+            <span class="status-dot"></span>
+            Razorpay Test Mode
+        </div>
+
+    </nav>
+
+
+    <main class="hero">
+
+        <section class="hero-content">
+
+            <div class="eyebrow">
+                PAYMENT DEMO
+            </div>
+
+            <h1>
+                Experience payments
+                <span>the simple way.</span>
+            </h1>
+
+            <p class="hero-description">
+                A clean Razorpay-powered checkout demo built with
+                FastAPI, HTML, CSS and JavaScript.
+            </p>
+
+            <div class="trust-row">
+
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Secure checkout</span>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Test environment</span>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Instant verification</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="product-card">
+
+            <div class="product-visual">
+
+                <div class="product-orb orb-main"></div>
+                <div class="product-orb orb-small"></div>
+
+                <div class="product-symbol">
+                    &lt;/&gt;
+                </div>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    DEVELOPER PRODUCT
+                </div>
+
+                <h2>Premium Developer Kit</h2>
+
+                <p>
+                    A demo product for learning Razorpay payments.
+                </p>
+
+                <div class="price-row">
+
+                    <div>
+                        <span class="price-label">Price</span>
+
+                        <div class="price">
+                            ₹200
+                        </div>
+                    </div>
+
+                    <div class="currency">
+                        INR
+                    </div>
+
+                </div>
+
+
+                <button class="buy-button" onclick="startPayment()">
+
+                    <span>Buy now</span>
+
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+                <div class="secure-note">
+
+                    <span class="lock">⌁</span>
+
+                    Payments are processed securely by Razorpay
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <span>PayFlow Demo</span>
+
+        <span>Built for Razorpay Test Mode</span>
+
+    </footer>
+
+    <script>
+        const PRODUCT = {
+            name: "Premium Developer Kit",
+            description: "A demo product for learning Razorpay payments.",
+            price: 200,
+            currency: "INR"
+        };
+
+        async function startPayment() {
+
+            const response = await fetch("/create-order", {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    amount: PRODUCT.price,
+                    currency: PRODUCT.currency
+                })
+            });
+
+            const data = await response.json();
+
+            window.location.href =
+                `/payment?order_id=${encodeURIComponent(data.order_id)}`;
+        }
+
+    </script>
+
+</body>
+
+</html>

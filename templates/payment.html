@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout — PayFlow</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">R</div>
+
+            <span>PayFlow</span>
+
+        </div>
+
+        <div class="nav-badge">
+            <span class="status-dot"></span>
+            Test Checkout
+        </div>
+
+    </nav>
+
+
+    <main class="checkout-wrapper">
+
+
+        <a href="/" class="back-link">
+            ← Back to product
+        </a>
+
+
+        <div class="checkout-card">
+
+
+            <div class="checkout-header">
+
+                <div class="checkout-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <div class="eyebrow">
+                        SECURE CHECKOUT
+                    </div>
+
+                    <h1>Complete your payment</h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="order-box">
+
+                <div class="order-product">
+
+                    <div class="mini-product-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+
+                        <h3>{{ product.name }}</h3>
+
+                        <p>One-time purchase</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="amount-row">
+
+                    <span>Total amount</span>
+
+                    <strong>
+                        ₹{{ product.price }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="test-notice">
+
+                <div class="notice-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>Test Mode</strong>
+
+                    <p>
+                        This is a test transaction.
+                        No real money will be charged.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button id="pay-button" class="buy-button checkout-button" onclick="payNow()">
+
+                <span>Pay ₹{{ product.price }}</span>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <div class="payment-methods">
+
+                <span>UPI</span>
+                <span>Cards</span>
+                <span>NetBanking</span>
+                <span>Wallets</span>
+
+            </div>
+
+
+            <div class="secure-note checkout-security">
+
+                <span class="lock">⌁</span>
+
+                Your payment is securely handled by Razorpay
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const RAZORPAY_KEY = "{{ key_id }}";
+
+        const PRODUCT_NAME = "{{ product.name }}";
+
+        const PRODUCT_PRICE = {{ product.price }};
+
+    </script>
+
+    <script src="/static/js/payment.js"></script>
+
+</body>
+
+</html>
