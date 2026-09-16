@@ -275,7 +275,7 @@ RAZORPAY_KEY_SECRET=your_test_secret
 
 Use your **Razorpay Test Mode** credentials.
 
-How to Get Credentials Must read **RAZORPAY_TEST_KEYS.md** file
+How to Get Credentials Must read **How_to_get_key.md** file
 
 ### 5. Start the Application
 
