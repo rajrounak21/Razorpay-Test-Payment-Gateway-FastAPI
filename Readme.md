@@ -9,7 +9,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat\&logo=javascript\&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](./LICENSE)
 
-A clean and minimal **Razorpay Test Mode payment integration** built with **Python, FastAPI, HTML, CSS, and JavaScript**.
+A clean and minimal Demo-Based **Razorpay Test Mode payment integration** built with **Python, FastAPI, HTML, CSS, and JavaScript**.
 
 This project demonstrates the complete payment flow — from creating a Razorpay order to opening the Razorpay Checkout and verifying the payment signature on the backend.
 
