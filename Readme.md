@@ -236,8 +236,8 @@ Make sure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rajrounak21/razorpay-fastapi-payment-demo.git
-cd razorpay-fastapi-payment-demo
+git clone https://github.com/rajrounak21/Razorpay-Test-Payment-Gateway-FastAPI.git
+cd Razorpay-Test-Payment-Gateway-FastAPI
 ```
 
 ### 2. Create a Virtual Environment
